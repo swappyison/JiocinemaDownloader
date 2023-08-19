@@ -13,4 +13,4 @@ here i went to network tab under developer tools and typed method:POST. I select
 5. Choose which format to download
 6. enjoy!
 
-NOTE: access token gets expired after every 15 minutes so you need to edit the python file for a fresh token everytime.
+NOTE: access token gets expired after every 15 minutes so you need to get a fresh token everytime.
