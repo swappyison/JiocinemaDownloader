@@ -3,13 +3,13 @@ import subprocess
 import jwt
 import re
 
-access_token = 'eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6ImFjNGU1Y2E5LWY4YTYtNGU0Mi1iYjkxLWFiNjQzY2QxMTMxZSIsInVzZXJUeXBlIjoiR1VFU1QiLCJhcHBOYW1lIjoiUkpJTF9KaW9DaW5lbWEiLCJkZXZpY2VJZCI6IjI1MTcwMTM4MjUiLCJkZXZpY2VUeXBlIjoicGhvbmUiLCJvcyI6ImlvcyIsInByb2ZpbGVJZCI6IjBiMThjYWE3LTFmMWQtNDEwZi04NWJjLWIyNWJiNzg2Y2Q0MCIsImFkSWQiOiIyNTE3MDEzODI1In0sImV4cCI6MTY5MjI1Njg5MywiaWF0IjoxNjkyMjQ5NjkzfQ.rtK52VYl6zxtXpyFKXGluX3TnordrCQ0oddZ7a53ix6CqVDeznoDkKZurbjGOPXPKVa_dPdnULyUakbY0Jm0yA'
+access_token = input('access_token')
 print('\ntest link: https://www.jiocinema.com/movies/sergeant-bhojpuri/3767689\ntest link: https://www.jiocinema.com/tv-shows/kaalkoot/1/janam-din/3788001\n')
 
 link = input('link: ')
 link_id = re.findall(r'.*/(.*)', link)[0].strip()
 
-m3u8DL_RE = 'N_m3u8DL-RE'
+m3u8DL_RE = './N_m3u8DL-RE'
 
 def replace_invalid_chars(title: str) -> str:
     invalid_chars = {'<': '\u02c2', '>': '\u02c3',
