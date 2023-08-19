@@ -8,8 +8,8 @@ Download both DRM and DRM free videos from jiocinema
 
 3.run python script in terminal:
  ```python
-python3 jiodownloader.py
-
+ python3 jiodownloader.py
+ ```python
 4. Simply copy and paste the jiocinema url
 5. Choose which format to download
 6. enjoy!
