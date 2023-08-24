@@ -3,13 +3,14 @@ import subprocess
 import jwt
 import re
 
-access_token = input('access_token')
+access_token = input('access_token:')
+
 print('\ntest link: https://www.jiocinema.com/movies/sergeant-bhojpuri/3767689\ntest link: https://www.jiocinema.com/tv-shows/kaalkoot/1/janam-din/3788001\n')
 
 link = input('link: ')
 link_id = re.findall(r'.*/(.*)', link)[0].strip()
 
-m3u8DL_RE = './N_m3u8DL-RE'
+m3u8DL_RE = 'N_m3u8DL-RE'
 
 def replace_invalid_chars(title: str) -> str:
     invalid_chars = {'<': '\u02c2', '>': '\u02c3',
@@ -80,7 +81,6 @@ json_data2 = {
 }
 
 response2 = requests.post('https://apis-jiovoot.voot.com/playbackjv/v4/'+link_id+'', headers=headers2, json=json_data2, verify=False).json()
-#print(f'\n{response2}\n')
 
 contentType = response2['data']['contentType']
 
@@ -104,10 +104,8 @@ title = replace_invalid_chars(title)
 print(f'\n{title}\n')
 
 mpd = response2['data']['playbackUrls'][0]['url']
-#print(f'\n{mpd}\n')
 
 lic_url = response2['data']['playbackUrls'][0]['licenseurl']
-#print(f'\n{lic_url}\n')
 
 try:
     import requests
@@ -129,10 +127,10 @@ try:
     from pywidevine.L3.getPSSH import get_pssh
     from pywidevine.L3.decrypt.wvdecryptcustom import WvDecrypt
     import time
-    import re
+    import re  
     
     headers = {
-        'authority': 'key-jiocinema.voot.com',
+        'authority': 'prod.media.jio.com',
         'accesstoken': access_token,
         'appname': appName,
         'content-type': 'application/octet-stream',
@@ -143,8 +141,9 @@ try:
         'os': 'android',
         'referer': 'https://www.jiocinema.com/',
         'uniqueid': uniqueid,
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-        'versioncode': '560',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+        'versioncode': '570',
+        'x-feature-code': 'ytvjywxwkn',
         'x-platform': 'Web',
         'x-playbackid': uniqueid,
     }
