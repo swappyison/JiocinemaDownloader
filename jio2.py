@@ -190,7 +190,7 @@ try:
     '--header', 'Referer: https://www.jiocinema.com/',
 ]
     subprocess.run([m3u8DL_RE,
-                    '-M', 'format=mp4:muxer=ffmpeg',
+                    '-M', 'format=mkv:muxer=ffmpeg',
                     '--concurrent-download',
                     '--log-level', 'INFO',
                     '--save-name', 'video', mpd, *ke_ys, *headers])
@@ -198,8 +198,14 @@ try:
 except IndexError: #DRM free
     print()
     subprocess.run([m3u8DL_RE,
-                    '-M', 'format=mp4:muxer=ffmpeg',
+                    '-M', 'format=mkv:muxer=ffmpeg',
                     '--concurrent-download',
                     '--log-level', 'INFO',
                     '--save-name', 'video', mpd])
+
+try:
+    Path('video.mkv').rename(''+title+'.mkv')
+    print(f'{title}.mkv \nall done!\n')
+except FileNotFoundError:
+    print("[ERROR] no mkv file")
 
