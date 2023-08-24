@@ -3,7 +3,7 @@ Download both DRM and DRM free videos from jiocinema
 
 # Steps
 1. Install required dependencies
-2. run python script in terminal: python3 jiodownloader.py (for license url like: key-jiocinema) or python3 jio2.py (for license url like: prod-media?proxy)
+2. run python script in terminal: python3 jiodownloader.py
 3. for the field 'accesstoken' copy your own value like this:
 ![SCR-20230819-jqs](https://github.com/swappyison/JiocinemaDownloader/assets/88504971/310d8f8c-2d28-4c13-946c-6c594fc67914)
 
