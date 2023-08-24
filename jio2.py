@@ -33,19 +33,30 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 headers2 = {
-    'authority': 'apis-jiovoot.voot.com',
-    'accept': 'application/json, text/plain, */*',
-    'accesstoken': access_token,
-    'appname': appName,
-    'content-type': 'application/json',
-    'deviceid': deviceId,
-    'origin': 'https://www.jiocinema.com',
-    'referer': 'https://www.jiocinema.com/',
+        'authority': 'apis-jiovoot.voot.com',
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0',
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'en-US,en;q=0.5',
+    # 'Accept-Encoding': 'gzip, deflate, br',
+    'Content-Type': 'application/json',
+    'appname': 'RJIL_JioCinema',
+    'versioncode': '570',
     'uniqueid': uniqueid,
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-    'versioncode': '560',
+    'accesstoken': access_token,
+    'deviceid': '2517013825',
     'x-platform': 'androidweb',
+    'x-apisignatures': 'o668nxgzwff',
     'x-platform-token': 'web',
+    'Origin': 'https://www.jiocinema.com',
+    'Connection': 'keep-alive',
+    'Referer': 'https://www.jiocinema.com/',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'cross-site',
+    'Pragma': 'no-cache',
+    'Cache-Control': 'no-cache',
+    # Requests doesn't support trailers
+    # 'TE': 'trailers',
 }
 
 json_data2 = {
@@ -67,16 +78,17 @@ json_data2 = {
             },
         ],
     },
-    'continueWatchingRequired': True,
+    'continueWatchingRequired': False,
     'dolby': False,
     'downloadRequest': False,
     'hevc': False,
     'kidsSafe': False,
-    'manufacturer': 'Windows',
-    'model': 'Windows',
+    'manufacturer': 'Mac OS',
+    'model': 'Mac OS',
     'multiAudioRequired': True,
-    'osVersion': '10',
+    'osVersion': '10.15',
     'parentalPinValid': True,
+    'x-apisignatures': 'o668nxgzwff',
 }
 
 response2 = requests.post('https://apis-jiovoot.voot.com/playbackjv/v4/'+link_id+'', headers=headers2, json=json_data2, verify=False).json()
@@ -173,22 +185,21 @@ try:
     ke_ys = ' '.join([f'--key {key}' for key in keys]).split()
     
     print()
+    headers = [
+    '--header', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0',
+    '--header', 'Referer: https://www.jiocinema.com/',
+]
     subprocess.run([m3u8DL_RE,
-                    '-M', 'format=mkv:muxer=ffmpeg',
+                    '-M', 'format=mp4:muxer=ffmpeg',
                     '--concurrent-download',
                     '--log-level', 'INFO',
-                    '--save-name', 'video', mpd, *ke_ys])
+                    '--save-name', 'video', mpd, *ke_ys, *headers])
 
 except IndexError: #DRM free
     print()
     subprocess.run([m3u8DL_RE,
-                    '-M', 'format=mkv:muxer=ffmpeg',
+                    '-M', 'format=mp4:muxer=ffmpeg',
                     '--concurrent-download',
                     '--log-level', 'INFO',
                     '--save-name', 'video', mpd])
 
-try:
-    Path('video.mkv').rename(''+title+'.mkv')
-    print(f'{title}.mkv \nall done!\n')
-except FileNotFoundError:
-    print("[ERROR] no mkv file")
