@@ -1,0 +1,5 @@
+xmltodict
+requests
+pyjwt
+protobuf==3.20.
+pyperclip
