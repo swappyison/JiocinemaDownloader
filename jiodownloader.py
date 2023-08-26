@@ -1,3 +1,4 @@
+# thanks to sk8ordi3 
 from pathlib import Path
 import subprocess
 import jwt
