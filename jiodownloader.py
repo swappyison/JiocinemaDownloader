@@ -1,4 +1,4 @@
-# thanks to sk8ordi3 
+# thanks to sk8ordi3 for script
 from pathlib import Path
 import subprocess
 import jwt
