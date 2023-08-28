@@ -14,6 +14,7 @@ here i went to network tab under developer tools and typed method:POST. I select
 6. enjoy!
 
 NOTE: access token gets expired after every 15 minutes so you need to get a fresh token everytime.
+
 UPDATE: Now you can bulk download episodes from jiocinema:
 1. run jio.sh
 2. enter url of show
