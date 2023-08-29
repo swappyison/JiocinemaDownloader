@@ -39,7 +39,7 @@ if show_response.status_code == 200:
     tray_tabs_ids = [tab['id'] for tray in show_data.get('trays', []) for tab in tray.get('trayTabs', [])]
 
     # Open a file for writing episode URLs
-    with open("episode_url.txt", "w") as output_file:
+    with open("episode_urls.txt", "w") as output_file:
         # Sending GET requests to the specified URL for each 'id' value
         for id_value in tray_tabs_ids:
             # Initialize page number and flag
