@@ -4,8 +4,9 @@ import subprocess
 import jwt
 import re
 
-access_token = input('access_token:')
-
+with open('access_token.txt', 'r') as file:
+    access_token = file.read().strip()  
+    
 print('\ntest link: https://www.jiocinema.com/movies/sergeant-bhojpuri/3767689\ntest link: https://www.jiocinema.com/tv-shows/kaalkoot/1/janam-din/3788001\n')
 
 link = input('link: ')
