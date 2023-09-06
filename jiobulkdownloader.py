@@ -10,7 +10,8 @@ def replace_invalid_chars(title: str) -> str:
 
     return ''.join(invalid_chars.get(c, c) for c in title)
 
-access_token = input('access_token:')
+with open('access_token.txt', 'r') as file:
+    access_token = file.read().strip()  # Read and remove any leading/trailing whitespace
 print('\n')
 
 # Read episode URLs from the text file
