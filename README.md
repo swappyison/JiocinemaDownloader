@@ -13,7 +13,7 @@ here i went to network tab under developer tools and typed method:POST. I select
 5. Choose which format to download
 6. enjoy!
 
-NOTE: access token can be retrieved through running jioaccess.js, for this run node jioaccess.js
+NOTE: access token can be retrieved through running jioaccess.js, for this run node jioaccess.js (captures dynamically generated access token using pupeteer which emulates browser {needs chromedriver installed}, if your pc has low RAM you can skip this.)
 
 UPDATE: Now you can bulk download episodes from jiocinema:
 1. run jio.sh
