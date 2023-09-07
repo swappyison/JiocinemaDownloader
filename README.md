@@ -1,7 +1,7 @@
 # JiocinemaDownloader
 Download both DRM and DRM free videos from jiocinema
-NOTE: please move all the python scripts inside WKS folder before proceeding else you will get ModuleNotFoundError: No module named 'pywidevine.L3' error.
 # Steps
+NOTE: please move all the python scripts inside WKS folder before proceeding else you will get ModuleNotFoundError: No module named 'pywidevine.L3' error.
 1. Install required dependencies (pip3 install -r requirements.txt)
 2. run python script in terminal: python3 jiodownloader.py
 3. for the field 'accesstoken' copy your own value like this:
