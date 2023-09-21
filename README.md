@@ -12,6 +12,7 @@ here i went to network tab under developer tools and typed method:POST. I select
 4. Simply copy and paste the jiocinema url
 5. Choose which format to download
 6. enjoy!
+![jiodownloader](https://github.com/swappyison/JiocinemaDownloader/assets/88504971/d66646a6-b848-4140-9da1-29b21302b857)
 
 NOTE: access token can be retrieved through running jioaccess.js, for this run node jioaccess.js (captures dynamically generated access token using pupeteer which emulates browser {needs chromedriver installed}, if your pc has low RAM you can skip this.)
 
