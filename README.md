@@ -6,7 +6,6 @@ NOTE: please move all the python scripts inside WKS folder before proceeding els
 2. run python script in terminal: python3 jiodownloader.py
 3. for the field 'accesstoken' copy your own value like this:
 ![jios](https://github.com/swappyison/JiocinemaDownloader/assets/88504971/8e9eeef6-095b-459d-86bb-1aa945510dd2)
-![SCR-20230819-jqs](https://github.com/swappyison/JiocinemaDownloader/assets/88504971/310d8f8c-2d28-4c13-946c-6c594fc67914)
 
 here i went to network tab under developer tools and typed method:POST. I selected the url with key-jiocinema and scrolled down to see the access token value. I then copied it by right clicking on it. (you can use apis-jiocinema.voot link also)
 
