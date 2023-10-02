@@ -14,8 +14,7 @@ def replace_invalid_chars(title: str) -> str:
     return ''.join(invalid_chars.get(c, c) for c in title)
 
 def main():
-    with open('access_token.txt', 'r') as file:
-    access_token = file.read().strip()  # Read and remove any leading/trailing whitespace
+    access_token = input('access_token:')
     
     with open('episode_urls.txt', 'r') as url_file:
         urls = url_file.readlines()
@@ -159,17 +158,22 @@ def main():
             print()
             subprocess.run([m3u8DL_RE,
                             '-M', 'format=mkv:muxer=ffmpeg',
-                            '--concurrent-download',
-                            '--log-level', 'INFO',
-                            '--save-name', 'video', mpd, *ke_ys])
+    '--concurrent-download',
+    '--log-level', 'INFO',
+    '--save-name', 'video',
+    '-sv', 'best',  
+    '-sa', 'best', mpd, *ke_ys])
     
         except IndexError:  # DRM free
             print()
             subprocess.run([m3u8DL_RE,
                             '-M', 'format=mkv:muxer=ffmpeg',
-                            '--concurrent-download',
-                            '--log-level', 'INFO',
-                            '--save-name', 'video', mpd])
+    '--concurrent-download',
+    '--log-level', 'INFO',
+    '--save-name', 'video',
+    '-sv', 'best',  # Specify video quality as 'best'
+    '-sa', 'best',  # Specify audio quality as 'best'
+    mpd])
     
         try:
             Path('video.mkv').rename('' + title + '.mkv')
