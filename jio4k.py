@@ -162,17 +162,21 @@ def main():
             print()
             subprocess.run([m3u8DL_RE,
                             '-M', 'format=mkv:muxer=ffmpeg',
-                            '--concurrent-download',
-                            '--log-level', 'INFO',
-                            '--save-name', 'video', mpd, *ke_ys])
+    '--concurrent-download',
+    '--log-level', 'INFO',
+    '--save-name', 'video',
+    '-sv', 'best',  
+    '-sa', 'best', mpd, *ke_ys])
     
         except IndexError:  # DRM free
             print()
             subprocess.run([m3u8DL_RE,
                             '-M', 'format=mkv:muxer=ffmpeg',
-                            '--concurrent-download',
-                            '--log-level', 'INFO',
-                            '--save-name', 'video', mpd])
+    '--concurrent-download',
+    '--log-level', 'INFO',
+    '--save-name', 'video',
+    '-sv', 'best',  
+    '-sa', 'best', mpd])
     
         try:
             Path('video.mkv').rename('' + title + '.mkv')
