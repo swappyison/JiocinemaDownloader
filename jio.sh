@@ -7,4 +7,4 @@ python3 jioscraper.py
 sleep 10
 
 # Start jiobulkdownloader.py
-python3 jiobulkdownloader.py
+python3 jiobulkdownloaderDRM.py
