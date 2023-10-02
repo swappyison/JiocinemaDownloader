@@ -16,6 +16,12 @@ here i went to network tab under developer tools and typed method:POST. I select
 
 NOTE: access token can be retrieved through running jioaccess.js, for this run node jioaccess.js (captures dynamically generated access token using pupeteer which emulates browser {needs chromedriver installed}, if your pc has low RAM you can skip this.)
 
+What each script does?
+1. Jiodownloader.py -----> downloads a video based on required resolution set by user.
+2. Jioscraper.py -----> scraps the list of all episode urls into episode_urls.txt for bulk downloading purpose.
+3. JiobulkdownloaderDRM.py -----> downloads all videos scraped under episode_urls.txt with highest possible quality (if not 4k)
+4. Jio4k.py -----> bulk downloads 4k supported videos under episode_urls.txt.
+
 UPDATE: Now you can bulk download episodes from jiocinema:
 1. run jio.sh
 2. enter url of show
