@@ -88,10 +88,10 @@ def main():
         elif contentType == 'EPISODE':
             showName = response2['data']['show']['name']
             season_num = int(response2['data']['episode']['season'])
-            episode_num = int(response2['data']['episode']['episodeNo'])
+            episode_num = (response2['data']['episode']['episodeNo'])
             episode_title = response2['data']['fullTitle']
             
-            title = f'{showName} - S{season_num:02d}E{episode_num:02d} - {episode_title}'
+            title = f'{showName} - S{season_num:02d}E{episode_num:} - {episode_title}'
     
         else:
             movie_name = response2['data']['name']
