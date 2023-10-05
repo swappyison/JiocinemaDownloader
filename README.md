@@ -75,5 +75,5 @@ Now you can bulk download episodes from jiocinema:
 
 4.enjoy!
 
-need help? PM me on telegram![image](https://github.com/swappyison/JiocinemaDownloader/assets/88504971/67d3ed04-118e-4705-ae59-2332a0ca6472) @swappyison
+need help? PM me on telegram @swappyison
 
